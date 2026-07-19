@@ -1,6 +1,6 @@
-/* Revival Fire Ministry — motion & the living ember field.
-   Signature element: canvas embers rising through the Kalahari night,
-   with a GSAP-orchestrated hero and scroll-triggered reveals. */
+/* Emmanuel Harvest Christian Fellowship — motion & the golden light field.
+   Signature element: the "Beyond Sunday" sphere marquee (pure CSS, see
+   style.css), plus a GSAP-orchestrated hero and scroll-triggered reveals. */
 
 (() => {
   'use strict';

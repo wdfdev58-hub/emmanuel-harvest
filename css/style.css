@@ -1,5 +1,6 @@
-/* Revival Fire Ministry — custom styles atop Tailwind.
-   Concept: sacred fire in the Kalahari night. */
+/* Emmanuel Harvest Christian Fellowship — custom styles atop Tailwind.
+   Concept: golden harvest light at sunset; Kingdom ambassadors sent into
+   every sphere of society. */
 
 :root {
   --ink: #12100A;
@@ -34,8 +35,8 @@ body { overflow-x: hidden; }
 }
 .navlink:hover::after { width: 100%; }
 
-.ember-dot { box-shadow: 0 0 14px 2px rgba(224,164,40,0.8); animation: pulse 2.4s ease-in-out infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .55; transform: scale(1.35); } }
+.brand-mark { box-shadow: 0 0 14px 2px rgba(224,164,40,0.55); animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 14px 2px rgba(224,164,40,0.55); } 50% { box-shadow: 0 0 20px 4px rgba(224,164,40,0.85); } }
 
 /* ---- buttons ---- */
 .cta, .cta-sm {
@@ -62,7 +63,7 @@ body { overflow-x: hidden; }
   font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .3em;
   color: rgba(242,208,107,0.9);
 }
-.eyebrow::before { content: '🔥'; font-size: .8rem; filter: grayscale(0.1); }
+.eyebrow::before { content: '🌾'; font-size: .8rem; filter: grayscale(0.1); }
 
 .statlabel { margin-top: .35rem; font-size: .8rem; color: rgba(246,240,226,0.55); line-height: 1.3; }
 
@@ -103,6 +104,25 @@ body { overflow-x: hidden; }
 .footlink { transition: color .3s; }
 .footlink:hover { color: var(--gold); }
 
+/* ---- beyond sunday: sphere marquee (the signature moment) ---- */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: inline-flex; align-items: baseline; gap: 1.25rem; white-space: nowrap;
+  padding-right: 1.25rem; animation: marquee-left 34s linear infinite;
+}
+.marquee-reverse .marquee-track { animation: marquee-right 38s linear infinite; }
+.marquee span:not(.dot) {
+  font-family: 'Fraunces', Georgia, serif; font-weight: 600; letter-spacing: -0.01em;
+  font-size: clamp(1.6rem, 4.5vw, 3.2rem); color: rgba(246,240,226,0.85);
+}
+.marquee .dot { font-size: clamp(1.2rem, 3vw, 2rem); color: rgba(224,164,40,0.55); }
+@keyframes marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
 /* ---- intro spark ---- */
 .intro-spark { box-shadow: 0 0 0 0 rgba(224,164,40,0.9); }
 
@@ -117,6 +137,6 @@ body { overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .hero-title .line { opacity: 1 !important; transform: none !important; }
-  .ember-dot, .scroll-cue, .intro-spark { animation: none !important; }
+  .brand-mark, .scroll-cue, .intro-spark, .marquee-track { animation: none !important; }
   #intro { display: none; }
 }
